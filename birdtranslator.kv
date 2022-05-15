@@ -1,0 +1,33 @@
+<GameView>:
+    name_input: name_input
+    translation: translation
+    BoxLayout:
+        orientation:"vertical"
+        size: root.width, root.height
+        Label:
+            text: "Bird Name Translator"
+            font_size: 15
+        Spinner:
+            id:lfrom
+            text: "From"
+            values:["Français", "English", "Svenska"]
+            on_text: root.chooseFrom(lfrom.text)
+        Spinner:
+            id:lto
+            text: "To"
+            values:["Français", "English", "Svenska"]
+            on_text: root.chooseTo(lto.text)
+        TextInput:
+            id: name_input
+            multiline: False
+        Button:
+            text: "Translate"
+            on_press: root.main()
+        Label:
+            id: translation
+            text:"Translation here"
+            font_size: 20
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: 100,100,100,100
